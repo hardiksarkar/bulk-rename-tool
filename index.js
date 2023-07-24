@@ -55,7 +55,9 @@ const take_input = async () => {
               c++;
               temp = true;
               console.log(
-                `- ${fileExt===""?"Folder":"File"} ${fileBaseName}${fileExt} will be renamed to ${path.basename(
+                `- ${
+                  fileExt === "" ? "Folder" : "File"
+                } ${fileBaseName}${fileExt} will be renamed to ${path.basename(
                   newFileName
                 )}`
               );
@@ -131,7 +133,9 @@ const fileRenameFunc = () => {
                     c++;
                     // printing only if before and after files are not same
                     console.log(
-                      `- ${fileExt===""?"Folder":"File"} ${fileBaseName}${fileExt} Renamed Successfully to ${path.basename(
+                      `- ${
+                        fileExt === "" ? "Folder" : "File"
+                      } ${fileBaseName}${fileExt} Renamed Successfully to ${path.basename(
                         newFileName
                       )}`
                     );
@@ -153,12 +157,19 @@ const fileRenameFunc = () => {
   let x = await take_input();
   if (x == false) {
     console.log("No such files to rename!");
+    console.log('*** Tool created by Hardik Sarkar © 2023 ***');
     return;
   }
   if (confirm) {
     const c = await fileRenameFunc(confirm);
     console.log(`All ${c} files and folders renamed successfully!`);
+    // Thank you note for users
+    console.log(
+      "Thank you for using the Bulk Rename Tool! We hope this simplifies your renaming process and enhances your productivity :)"
+    );
   } else {
     console.log("File renaming cancelled successfully!");
   }
+  console.log('*** Tool created by Hardik Sarkar © 2023 ***');
+
 })();
