@@ -76,6 +76,7 @@ const take_input = async () => {
   } catch (error) {
     return false;
   }
+  console.log("Warning! This action is irreversible.");
   while (true) {
     const confirmation = await userInput(
       `Are you sure you want to rename ${c} files and folders as above? (yes/no) : `
